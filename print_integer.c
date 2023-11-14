@@ -1,83 +1,91 @@
 #include "main.h"
 
 /**
- * myprintf_i - prints integer
- * @ptr: print the argument
- * Return: integer
-*/
-
-int myprintf_i(va_list ptr)
+ * printf_int - prints integer
+ * @args: argument to print
+ * Return: number of characters printed
+ */
+int printf_int(va_list args)
 {
-	int ar = va_arg(args, int);
-	int count = 0;
-	int num, digit, exp = 1;
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit, exp = 1;
+	int  i = 1;
 
-	if (ar < 0)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
 		_putchar('-');
-		count++;
-		ar = -ar;
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-	num = ar;
 	if (num > 0)
 	{
 		while (num / 10 != 0)
 		{
-			exp *= 10;
-			num /= 10;
+			exp = exp * 10;
+			num = num / 10;
 		}
-		num = ar;
+		num = n;
 		while (exp > 0)
 		{
 			digit = num / exp;
 			_putchar(digit + '0');
-			num -= digit * exp;
-			exp /= 10;
-			count++;
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
 		}
 	}
-	_putchar(ar % 10 + '0');
-	count++;
-	return (count);
+	_putchar(last + '0');
+
+	return (i);
 }
 
 /**
- * myprintf_d - prints my decimal
- * @ptr: print the argument
- * Return: integer
-*/
+ * printf_dec - prints decimal
+ * @args: argument to print
+ * Return: number of characters printed
+ */
 
-int myprintf_d(va_list ptr)
+int printf_dec(va_list args)
 {
-	int ar = va_arg(args, int);
-	int count = 0;
-	int num, digit, exp = 1;
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit;
+	int  i = 1;
+	int exp = 1;
 
-	if (ar < 0)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
 		_putchar('-');
-		count++;
-		ar = -ar;
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-	num = ar;
 	if (num > 0)
 	{
 		while (num / 10 != 0)
 		{
-			exp *= 10;
-			num /= 10;
+			exp = exp * 10;
+			num = num / 10;
 		}
-		num = ar;
+		num = n;
 		while (exp > 0)
 		{
 			digit = num / exp;
 			_putchar(digit + '0');
-			num -= digit * exp;
-			exp /= 10;
-			count++;
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
 		}
 	}
-	_putchar(ar % 10 + '0');
-	count++;
-	return (count);
+	_putchar(last + '0');
+
+	return (i);
 }
