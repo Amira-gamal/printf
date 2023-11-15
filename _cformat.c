@@ -8,8 +8,10 @@
  *
  */
 
-int _cformat(char c)
+int _cformat(va_list ptr)
 {
+	char c = va_arg(ptr, char);
+	
 	_putchar(c);
 
 	return (1);
