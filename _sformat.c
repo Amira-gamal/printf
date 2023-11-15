@@ -7,9 +7,11 @@
  *
  */
 
-int _sformat(const char *c)
+int _sformat(va_list ptr)
 {
 	int count = 0;
+
+	char *c = va_arg(ptr, char*);
 
 	while(*c != '\0')
 	{
