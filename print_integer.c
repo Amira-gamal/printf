@@ -8,7 +8,7 @@
 
 int myprintf_i(va_list ptr)
 {
-	int ar = va_arg(args, int);
+	int ar = va_arg(ptr, int);
 	int count = 0;
 	int num, digit, exp = 1;
 
@@ -49,7 +49,7 @@ int myprintf_i(va_list ptr)
 
 int myprintf_d(va_list ptr)
 {
-	int ar = va_arg(args, int);
+	int ar = va_arg(ptr, int);
 	int count = 0;
 	int num, digit, exp = 1;
 
