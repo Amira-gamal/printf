@@ -27,6 +27,12 @@ int _printf(const char *format, ...)
 				} else if (*format == 's')
 				{
 					count += _sformat(args);
+				} else if (*format == 'i')
+				{
+					count += myprintf_i(args);
+				} else if (*format == 'd')
+				{
+					count += myprintf_d(args);
 				} else if (*format == '%')
 				{
 					_putchar('%');
@@ -42,8 +48,7 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		format++;
-	}
-	va_end(args);
+	} va_end(args);
 	return (count);
 }
 
