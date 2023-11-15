@@ -1,61 +1,49 @@
 #include "main.h"
 
 /**
- * 
- * main - entry point
+ * _printf - print formatted string to stdout
  *
- * printf func - print formatted text to stdout
+ * @format: is the passed string
  *
- * return - 0 (success)
- *
+ * Return:  0 (success)
  */
 
-int _printf(const char* format, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
-
 	int count = 0;
 
 	va_start(args, format);
-
-	while(*format != '\0')
+	while (*format != '\0')
 	{
 		if (*format == '%')
-                {
+		{
 			if (*(format + 1) != '\0')
 			{
 				format++;
 				if (*format == 'c')
-				{										count += _cformat(args);
-				
-				}else if (*format == 's')
+				{
+					count += _cformat(args);
+				} else if (*format == 's')
 				{
 					count += _sformat(args);
-				}else if (*format == '%')
+				} else if (*format == '%')
 				{
 					_putchar('%');
 					count++;
 				}
-			}else
+			} else
 			{
 				return (-1);
 			}
-
-		}else
+		} else
 		{
 			_putchar(*format);
-
 			count++;
 		}
-
-
-
 		format++;
 	}
-
 	va_end(args);
-	
 	return (count);
-
 }
 

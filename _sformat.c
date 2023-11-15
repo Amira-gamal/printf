@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- *_sformat: print all characters in string
+ * _sformat - print all characters in string
  *
- * return: 0 (success)
+ * @ptr: va_list pointer for string
+ * Return: 0 (success)
  *
  */
 
@@ -13,7 +14,7 @@ int _sformat(va_list ptr)
 
 	char *c = va_arg(ptr, char*);
 
-	while(*c != '\0')
+	while (*c != '\0')
 	{
 		count++;
 
@@ -22,6 +23,6 @@ int _sformat(va_list ptr)
 		c++;
 	}
 
-	return count;
+	return (count);
 }
 
