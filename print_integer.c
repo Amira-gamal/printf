@@ -51,7 +51,7 @@ int myprintf_i(va_list ptr)
 
 int myprintf_d(va_list ptr)
 {
-	int n = va_arg(ptrs, int);
+	int n = va_arg(ptr, int);
 	int num, last = n % 10, digit, exp = 1;
 	int  i = 1;
 
