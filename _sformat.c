@@ -16,6 +16,8 @@ int _sformat(const char *c)
 		count++;
 
 		_putchar(*c);
+
+		c++;
 	}
 
 	return count;
