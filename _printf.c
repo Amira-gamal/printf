@@ -20,19 +20,25 @@ int _printf(const char* format, ...)
 
 	while(*format != '\0')
 	{
-		if (*format == '%' && *(format+1) != '\0')
+		if (*format == '%')
                 {
-			format++;
-
-                        if (*format == 'c')
+			if (*(format + 1) != '\0')
 			{
-
-				count += _cformat(args);
-
-			}else if (*format == 's')
+				format++;
+				if (*format == 'c')
+				{										count += _cformat(args);
+				
+				}else if (*format == 's')
+				{
+					count += _sformat(args);
+				}else if (*format == '%')
+				{
+					_putchar('%');
+					count++;
+				}
+			}else
 			{
-
-				count += _sformat(args);
+				return (-1);
 			}
 
 		}else
@@ -52,3 +58,4 @@ int _printf(const char* format, ...)
 	return (count);
 
 }
+

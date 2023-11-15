@@ -16,3 +16,4 @@ int _cformat(va_list ptr)
 
 	return (1);
 }
+

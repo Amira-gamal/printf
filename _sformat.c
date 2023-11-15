@@ -24,3 +24,4 @@ int _sformat(va_list ptr)
 
 	return count;
 }
+
