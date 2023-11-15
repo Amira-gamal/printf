@@ -8,38 +8,38 @@
 int myprintf_i(va_list ptr)
 {
 	int x = va_arg(ptr, int);
-	int m, l = x % 10, d, e = 1;
+	int num, last = x % 10, digit, exp = 1;
 	int  i = 1;
 
 	x = x / 10;
-	m = x;
+	num = x;
 
-	if (l < 0)
+	if (last < 0)
 	{
 		_putchar('-');
-		m = -m;
-		x = -x;
-		l = -l;
+		num = -num;
+		n = -n;
+		last = -last;
 		i++;
 	}
-	if (m > 0)
+	if (num > 0)
 	{
-		while (m / 10 != 0)
+		while (num / 10 != 0)
 		{
-			e = e * 10;
-			m = m / 10;
+			exp = exp * 10;
+			num = num / 10;
 		}
-		m = x;
-		while (e > 0)
+		num = x;
+		while (exp > 0)
 		{
-			digit = m / e;
-			_putchar(d + '0');
-			m = m - (d * e);
-			e = e / 10;
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
 			i++;
 		}
 	}
-	_putchar(l + '0');
+	_putchar(last + '0');
 
 	return (i);
 }
@@ -52,38 +52,38 @@ int myprintf_i(va_list ptr)
 int myprintf_d(va_list ptr)
 {
 	int x = va_arg(ptr, int);
-	int m, l = x % 10, d, e = 1;
+	int num, last = x % 10, digit, exp = 1;
 	int  i = 1;
 
 	x = x / 10;
-	m = x;
+	num = n;
 
-	if (l < 0)
+	if (last < 0)
 	{
 		_putchar('-');
-		m = -m;
-		x = -x;
-		l = -l;
+		num = -num;
+		n = -n;
+		last = -last;
 		i++;
 	}
-	if (m > 0)
+	if (num > 0)
 	{
-		while (m / 10 != 0)
+		while (num / 10 != 0)
 		{
-			e = e * 10;
-			m = m / 10;
+			exp = exp * 10;
+			num = num / 10;
 		}
-		m = x;
-		while (e > 0)
+		num = x;
+		while (exp > 0)
 		{
-			d = m / p;
-			_putchar(d + '0');
-			m = m - (d * e);
-			e = e / 10;
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
 			i++;
 		}
 	}
-	_putchar(l + '0');
+	_putchar(last + '0');
 
 	return (i);
 }
