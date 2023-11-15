@@ -28,15 +28,13 @@ int _printf(const char* format, ...)
 
                         if (*format == 'c')
 			{
-				char c = va_arg (args, int);
 
-				count += _cformat(c);
+				count += _cformat(args);
 
 			}else if (*format == 's')
 			{
-				const char *s = va_arg (args, char*);
 
-				count += _sformat(s);
+				count += _sformat(args);
 			}
 
 		}else
