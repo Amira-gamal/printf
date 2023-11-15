@@ -10,7 +10,7 @@
 int _putchar(char c);
 int _printf(const char* format, ...);
 int _cformat(char c);
-int _sformat(char *c);
+int _sformat(const char *c);
 int myprintf_i(va_list ptr);
 int myprintf_d(va_list ptr);
 

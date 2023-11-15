@@ -7,7 +7,7 @@
  *
  */
 
-int _sformat(char *c)
+int _sformat(const char *c)
 {
 	int count = 0;
 
