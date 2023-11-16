@@ -8,12 +8,13 @@
 int _bformat(va_list ptr)
 {
 	unsigned int m = va_arg(ptr, unsigned int);
-	unsigned int d, e = 10;
+	unsigned int d;
+	unsigned long e = 10;
 	int  i = -1;
 
 	while (m / 2 != 0)
 	{
-		e = (e + (m % 2)) *10;
+		e = (e + (m % 2)) * 10;
 		m = m / 2;
 	}
 	e = e + (m % 2);
@@ -22,7 +23,7 @@ int _bformat(va_list ptr)
 	{
 		d = e % 10;
 		_putchar(d + '0');
-		e = e / 10;;
+		e = e / 10;
 		i++;
 	};
 
