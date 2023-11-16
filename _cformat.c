@@ -10,19 +10,9 @@
 
 int _cformat(va_list ptr)
 {
-	int num = va_arg(ptr, int);
+	unsigned char c = va_arg(ptr, int);
 
-	if (num < 128)
-	{
-		char c = num;
-
-		write(1, &c, 1);
-	} else
-	{
-		unsigned char c = num;
-
-		write(1, &c, 1);
-	}
+	write(1, &c, 1);
 
 	return (1);
 }
