@@ -14,6 +14,9 @@ int _sformat(va_list ptr)
 
 	char *c = va_arg(ptr, char*);
 
+	if (c == NULL)
+		return (0);
+
 	while (*c != '\0')
 	{
 		count++;
