@@ -10,7 +10,12 @@
 
 int _cformat(va_list ptr)
 {
-	char c = va_arg(ptr, int);
+	int num = va_arg(ptr, int);
+	
+	if (num < 128);
+		char c = num;
+	else
+		unsigned char c = num;
 
 	_putchar(c);
 
