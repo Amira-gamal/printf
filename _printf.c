@@ -30,6 +30,9 @@ int _printf(const char *format, ...)
 				} else if (*format == 'i' || *format == 'd')
 				{
 					count += myprintf_int(args);
+				} else if (*format == 'b')
+				{
+					count += _bformat(args);
 				} else if (*format == '%')
 				{
 					_putchar('%');
