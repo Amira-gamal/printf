@@ -7,7 +7,7 @@
  */
 int _bformat(va_list ptr)
 {
-	int m = va_arg(ptr, unsigned int);
+	unsigned int m = va_arg(ptr, unsigned int);
 	int  i = 0, count;
 	char *arr = malloc(60 * sizeof(char));
 
@@ -20,7 +20,7 @@ int _bformat(va_list ptr)
 	while (m / 2 != 0)
 	{
 		arr[i] = (m % 2) + '0';
-		m = m / 2;
+		m = (m / 2);
 		i++;
 	}
 
