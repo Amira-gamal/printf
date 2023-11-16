@@ -16,14 +16,10 @@ int _bformat(va_list ptr)
 		arr[i] = (m % 2) + '0';
 		m = m / 2;
 		i++;
-		
-		if (i >= 33)
-			arr = realloc(arr, i + sizeof(char));
 	}
 
 	arr[i] = (m % 2) + '0';
 	i++;
-	arr = realloc(arr, i + sizeof(char));
 	arr[i] = '\0';
 	i--;
 	count = i;
