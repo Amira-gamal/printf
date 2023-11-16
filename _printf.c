@@ -27,12 +27,10 @@ int _printf(const char *format, ...)
 				} else if (*format == 's')
 				{
 					count += _sformat(args);
-				} else if (*format == 'i')
+				} else if (*format == 'i' || *format == 'd')
 				{
 					count += myprintf_i(args);
-				} else if (*format == 'd')
-				{
-					count += myprintf_d(args);
+				}
 				} else if (*format == '%')
 				{
 					_putchar('%');
