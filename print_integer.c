@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * myprintf_i - prints int and d
+ * myprintf_int - prints int and d
  * @ptr:print the  argument
  * Return: number
  */
