@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 					count += _sformat(args);
 				} else if (*format == 'i' || *format == 'd')
 				{
-					count += myprintf_i(args);
+					count += myprintf_int(args);
 				}
 				} else if (*format == '%')
 				{
