@@ -11,6 +11,12 @@ int _bformat(va_list ptr)
 	int  i = 0, count;
 	char *arr = malloc(33 * sizeof(char));
 
+	if (m == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	while (m / 2 != 0)
 	{
 		arr[i] = (m % 2) + '0';
@@ -21,8 +27,8 @@ int _bformat(va_list ptr)
 	arr[i] = (m % 2) + '0';
 	i++;
 	arr[i] = '\0';
-	i--;
 	count = i;
+	i--;
 
 	while (i >= 0)
 	{
