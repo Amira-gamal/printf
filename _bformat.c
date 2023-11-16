@@ -31,5 +31,7 @@ int _bformat(va_list ptr)
 		i--;
 	}
 
+	free(arr);
+
 	return (count);
 }
