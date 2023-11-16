@@ -9,8 +9,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int _cformat(va_list ptr);
 int _sformat(va_list ptr);
-int myprintf_i(va_list ptr);
-int myprintf_d(va_list ptr);
+int myprintf_int(va_list ptr);
 
 #endif
 
