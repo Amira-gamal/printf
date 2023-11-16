@@ -14,7 +14,7 @@ int _bformat(va_list ptr)
 	while (m / 2 != 0)
 	{
 		arr[i] = (m % 2) + '0';
-		m = m /2;
+		m = m / 2;
 		i++;
 		arr = realloc(arr, i + sizeof(char));
 	}
@@ -25,13 +25,11 @@ int _bformat(va_list ptr)
 	arr[i] = '\0';
 	count = i - 1;
 
-	
 	while (i >= 0)
 	{
 		_putchar(arr[i]);
 		i--;
 	}
-	
 
 	return (count);
 }
