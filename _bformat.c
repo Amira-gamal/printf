@@ -7,9 +7,9 @@
  */
 int _bformat(va_list ptr)
 {
-	unsigned int m = va_arg(ptr, unsigned int);
+	int m = va_arg(ptr, unsigned int);
 	int  i = 0, count;
-	char *arr = malloc(33 * sizeof(char));
+	char *arr = malloc(60 * sizeof(char));
 
 	if (m == 0)
 	{
