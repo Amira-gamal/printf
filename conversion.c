@@ -25,6 +25,12 @@ int conversion(const char *format, va_list args)
 	} else if (*format == 'b')
 	{
 		count += _bformat(args);
+	} else if (*format == 'u')
+	{
+		count += _uforamt(args);
+	} else if (*format == 'o')
+	{
+		count += _oformat(args);
 	} else if (*format == '%')
 	{
 		_putchar('%');
