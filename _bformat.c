@@ -8,24 +8,30 @@
 int _bformat(va_list ptr)
 {
 	unsigned int m = va_arg(ptr, unsigned int);
-	unsigned int d;
-	unsigned long e = 10;
-	int  i = -1;
+	int  i = 0, count;
+	char *arr = malloc(sizeof(char));
 
 	while (m / 2 != 0)
 	{
-		e = (e + (m % 2)) * 10;
-		m = m / 2;
-	}
-	e = e + (m % 2);
-
-	while (e > 9)
-	{
-		d = e % 10;
-		_putchar(d + '0');
-		e = e / 10;
+		arr[i] = (m % 2) + '0';
+		m = m /2;
 		i++;
-	};
+		arr = realloc(arr, i + sizeof(char));
+	}
 
-	return (i);
+	arr[i] = (m % 2) + '0';
+	i++;
+	arr = realloc(arr, i + sizeof(char));
+	arr[i] = '\0';
+	count = i - 1;
+
+	
+	while (i >= 0)
+	{
+		_putchar(arr[i]);
+		i--;
+	}
+	
+
+	return (count);
 }
