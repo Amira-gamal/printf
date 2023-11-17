@@ -19,5 +19,4 @@ int _uformat(va_list ptr);
 int hexaLetters(int n, char c);
 int _hformat(va_list ptr, char c);
 int _pformat(va_list ptr);
-int _rformat(va_list ptr);
 #endif
