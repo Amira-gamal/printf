@@ -24,5 +24,6 @@ int _rformat(va_list ptr, int p)
 		p++;
 		i--;
 	}
+
 	return (p);
 }
