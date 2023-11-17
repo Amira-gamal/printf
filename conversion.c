@@ -37,12 +37,6 @@ int conversion(const char *format, va_list args)
 		count += _oformat(va_arg(args, unsigned int), count);
 	} else if (*format == 'x' || *format == 'X')
 	{
-		int uppercase = (*format == 'X') ? 1 : 0;
-		unsigned int value = va_arg(args, unsigned int);
-
-		count += _xformat(value, count, uppercase);
-	} else if (*format == 'x' || *format == 'X')
-	{
 		count += _hformat(args, *format);
 	} else if (*format == 'p')
 	{
