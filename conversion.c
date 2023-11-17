@@ -35,6 +35,12 @@ int conversion(const char *format, va_list args)
 	} else if (*format == 'o')
 	{
 		count += _oformat(args);
+	} else if (*format == 'x' || *format == 'X')
+	{
+		count += _hformat(args, *format);
+	} else if (*format == 'p')
+	{
+		count += _pformat(args);
 	} else if (*format == '%')
 	{
 		_putchar('%');
