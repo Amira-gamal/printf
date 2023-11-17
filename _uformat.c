@@ -6,7 +6,7 @@
  * Return: numbers
  */
 
-int _uforamt(va_list ptr)
+int _uformat(va_list ptr)
 {
 	int x = va_arg(ptr, unsigned int);
 	int m, l = x % 10, d, e = 1;

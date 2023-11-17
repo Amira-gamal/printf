@@ -31,7 +31,7 @@ int conversion(const char *format, va_list args)
 		count += _NonSformat(args);
 	} else if (*format == 'u')
 	{
-		count += _uforamt(args);
+		count += _uformat(args);
 	} else if (*format == 'o')
 	{
 		count += _oformat(args);

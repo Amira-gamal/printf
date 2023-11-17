@@ -11,6 +11,7 @@ int _oformat(va_list x)
 	unsigned int n = va_arg(x, unsigned int);
 	int counter = 0, i = 0;
 	unsigned int p = n;
+	int *arr;
 
 	do
 	{
@@ -18,7 +19,7 @@ int _oformat(va_list x)
 		counter++;
 	} while (p != 0);
 
-	int *arr = calloc(counter,  sizeof(int));
+	arr = calloc(counter,  sizeof(int));
 
 	if (arr == NULL) {
 		return -1;
