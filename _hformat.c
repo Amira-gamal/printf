@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * _hformat - print decimal as hexa
- * @ptr: pointer to decimal value need to be converted
- * Return: number of hexa digit
+ * hexaLetters - convert larger that NINE numbers to hexa
+ * @n: number to be converted
+ * @c: character to decide upper case or lowercase conversion
+ * Return: hexa number
  */
+
 int hexaLetters(int n, char c)
 {
 	if (n > 9)
@@ -23,9 +25,15 @@ int hexaLetters(int n, char c)
 		n += '0';
 	}
 
-	return n;
+	return (n);
 }
 
+/**
+ * _hformat - print decimal as hexa
+ * @ptr: pointer to decimal value need to be converted
+ * @c: lower or upper selecter
+ * Return: number of hexa digit
+ */
 
 int _hformat(va_list ptr, char c)
 {
@@ -37,7 +45,7 @@ int _hformat(va_list ptr, char c)
 	if (hexa == 0)
 	{
 		_putchar('0');
-		
+
 		free(arr);
 
 		return (1);

@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * _sformat - print all characters in string
- *
- * @ptr: va_list pointer for string
- * Return: 0 (success)
- *
+ * Hexa - convert to hexa
+ * @num: num to be converted
+ * Return: hexa num
  */
+
 int Hexa(int num)
 {
 	if (num > 9)
@@ -19,6 +18,12 @@ int Hexa(int num)
 
 	return (num);
 }
+
+/**
+ * _NonSformat - print all characters in string with \x addition
+ * @ptr: va_list pointer for string
+ * Return: number of printed letters (success)
+ */
 
 int _NonSformat(va_list ptr)
 {
@@ -44,8 +49,7 @@ int _NonSformat(va_list ptr)
 			count += 4;
 		} else
 		{
-
-			count++;	
+			count++;
 			_putchar(*c);
 		}
 

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _uforamt - prints unsigned int
+ * _uformat - prints unsigned int
  * @ptr: print the argument
  * Return: numbers
  */
@@ -44,4 +44,3 @@ int _uformat(va_list ptr)
 
 	return (i);
 }
-
