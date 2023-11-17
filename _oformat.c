@@ -1,39 +1,38 @@
 #include "main.h"
 
 /**
- * _oforamt - prints oct
- * @x: print the argument
- * Return: numbers
+ * _oformat - prints oct.
+ * @m: print the argument.
+ * @p: characters.
+ * Return: numbers.
  */
-
-int _oformat(va_list x)
+int _oformat(unsigned int m, int p)
 {
-	unsigned int n = va_arg(x, unsigned int);
-	int counter = 0, i = 0;
-	unsigned int p = n;
+	int oct[100], i = 0, j;
 
-	do
+	while (m != 0)
 	{
-		p /= 8;
-		counter++;
-	} while (p != 0);
+		int remainder = m % 8;
 
-	int *arr = calloc(counter,  sizeof(int));
-
-	if (arr == NULL) {
-		return -1;
-	 }
-    p = n;
-    for (i = counter - 1; i >= 0; i--)
-	{
-		arr[i] = p % 8;
-		p /= 8;
+		oct[i++] = '0' + remainder;
+		m /= 8;
 	}
-    while (i < counter)
+	if (i == 0)
 	{
-		_putchar(arr[i] + '0');
-		i++;
-    }
-	free(arr);
-	return (counter);
+		_putchar('0');
+		p++;
+	}
+	else
+	{
+		j = i - 1;
+
+		while (j >= 0)
+		{
+			_putchar(oct[j]);
+			p++;
+			j--;
+		}
+	}
+	return (p);
 }
+
