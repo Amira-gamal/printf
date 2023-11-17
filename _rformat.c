@@ -7,23 +7,17 @@
  * Return: character
  */
 
-int _rformat(va_list ptr, int p)
+int _rformat(va_list ptr)
 {
-	char *str = va_arg(ptr, char *);
-	int len = 0, i;
+	char *s = va_arg(args, char*);
+	int i;
+	int j = 0;
 
-	while (str[len])
-	{
-		len++;
-	}
-	int i = len - 1;
-
-	while (i >= 0)
-	{
-		_putchar(str[i]);
-		p++;
-		i--;
-	}
-
-	return (p);
+	if (s == NULL)
+		s = "(null)";
+	while (s[j] != '\0')
+		j++;
+	for (i = j - 1; i >= 0; i--)
+		_putchar(s[i]);
+	return (j);
 }
