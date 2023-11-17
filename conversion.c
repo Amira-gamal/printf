@@ -34,7 +34,6 @@ int conversion(const char *format, va_list args)
 		count += _uformat(args);
 	} else if (*format == 'o')
 	{
-<<<<<<< HEAD
 		count += _oformat(va_arg(args, unsigned int), count);
 	} else if (*format == 'x' || *format == 'X')
 	{
@@ -42,15 +41,12 @@ int conversion(const char *format, va_list args)
 		unsigned int value = va_arg(args, unsigned int);
 
 		count += _xformat(value, count, uppercase);
-=======
-		count += _oformat(args);
 	} else if (*format == 'x' || *format == 'X')
 	{
 		count += _hformat(args, *format);
 	} else if (*format == 'p')
 	{
 		count += _pformat(args);
->>>>>>> 216a249e735bfcd07fb3ea0b9e6c442bec0a0d7f
 	} else if (*format == '%')
 	{
 		_putchar('%');
