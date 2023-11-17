@@ -41,9 +41,6 @@ int conversion(const char *format, va_list args)
 	} else if (*format == 'p')
 	{
 		count += _pformat(args);
-	} else if (*format == 'r')
-	{
-		count += _rformat(args);
 	} else if (*format == '%')
 	{
 		_putchar('%');
