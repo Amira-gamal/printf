@@ -8,7 +8,7 @@
 int _pformat(va_list ptr)
 {
 	int count = 2;
-	char c = 'X';
+	char c = 'x';
 
 	_putchar('0');
 	_putchar('x');
